@@ -5,19 +5,27 @@
 
 int main(int argc, char *argv[]) {
 	
-	int sum = 0;
+	int answer = 23;
 	int num;
-	int i;
+	int trial = 0;
 	
-	printf("input a number : ");
-	scanf("%d", &num);
-	
-	for (i=0; i<=num; i++)
+	do
 	{
-		sum = sum + i;
+		//1. input
+		printf("input a number : ");
+		scanf("%d", &num);
+		
+		//2. decision (low/high)
+		if (num > answer)
+		printf("high!\n");
+		else if (num < answer)
+		printf("low!\n");
+		
+		trial = trial + 1;
 	}
+	while (num != answer); //3. loop condition : answer is equal to num?
 	
-	printf("result is %i\n", sum);
+	printf("Congratulation! trials : %d\n", trial);
 	
 	return 0;
 }
